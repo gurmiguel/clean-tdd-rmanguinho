@@ -6,6 +6,7 @@
   "rules": {
     "comma-dangle": ["warn", "always-multiline"],
     "node/handle-callback-err": "off",
+    "@typescript-eslint/method-signature-style": ["error", "method"],
     "@typescript-eslint/strict-boolean-expressions": "off"
   }
 }
