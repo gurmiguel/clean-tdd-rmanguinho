@@ -27,8 +27,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "eslint 'src/**' --cache --fix",
-      "test:staged"
+      "eslint 'src/**' --fix",
+      "npm run test:staged"
     ]
   }
 }
