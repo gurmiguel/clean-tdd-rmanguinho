@@ -1,0 +1,7 @@
+{
+  "name": "node-tdd-rmanguinho",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gustavo Miguel <gustavo.miguel@arena22.com.br>",
+  "license": "MIT"
+}

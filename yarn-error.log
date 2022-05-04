@@ -1,0 +1,36 @@
+Arguments: 
+  /home/gurmiguel/.nvm/versions/node/v14.17.5/bin/node /home/gurmiguel/.yarn/bin/yarn.js init --y
+
+PATH: 
+  /home/gurmiguel/.yarn/bin:/home/gurmiguel/.config/yarn/global/node_modules/.bin:/home/gurmiguel/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/home/gurmiguel/.yarn/bin:/home/gurmiguel/.config/yarn/global/node_modules/.bin:/home/gurmiguel/.nvm/versions/node/v14.17.5/bin:/home/gurmiguel/.zinit/polaris/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Eclipse Foundation/jdk-16.0.2.7-hotspot/bin:/mnt/c/Program Files/Eclipse Foundation/jdk-11.0.12.7-hotspot/bin:/mnt/c/Program Files (x86)/Microsoft SDKs/Azure/CLI2/wbin:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/gurmi/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Git/cmd:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Gradle/gradle-7.2/bin:/mnt/c/Kotlin/kotlinc/bin:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/gurmi/scoop/shims:/mnt/c/Users/gurmi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/gurmi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/gurmi/AppData/Local/Yarn/bin:/mnt/c/Users/gurmi/.dotnet/tools:/mnt/c/Program Files (x86)/GitHub CLI/:/mnt/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2021.2.2/bin:/mnt/c/Users/gurmi/.dotnet/tools:/mnt/c/Users/gurmi/AppData/Local/Android/Sdk/emulator:/mnt/c/Users/gurmi/AppData/Local/Android/Sdk/platform-tools:/home/gurmiguel/.yarn/bin:/home/gurmiguel/.yarn/bin:/home/gurmiguel/Android/platform-tools:/home/gurmiguel/Android/cmdline-tools/latest/bin:/home/gurmiguel/.yarn/bin:/home/gurmiguel/.yarn/bin:/home/gurmiguel/Android/platform-tools:/home/gurmiguel/Android/cmdline-tools/latest/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  14.17.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/home/gurmiguel/.yarn/lib/cli.js:137143:13)
+      at Interface.emit (events.js:400:28)
+      at Interface._ttyWrite (readline.js:910:16)
+      at ReadStream.onkeypress (readline.js:235:10)
+      at ReadStream.emit (events.js:400:28)
+      at emitKeys (internal/readline/utils.js:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1179:36)
+      at ReadStream.emit (events.js:400:28)
+      at addChunk (internal/streams/readable.js:290:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
