@@ -13,7 +13,7 @@ describe('Account Mongo Repository', () => {
   })
 
   beforeEach(async () => {
-    const accountCollection = MongoHelper.getCollection('accounts')
+    const accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
 
@@ -30,9 +30,6 @@ describe('Account Mongo Repository', () => {
       email: 'any_email@email.com',
       password: 'any_password',
     }
-
-    jest.spyOn(MongoHelper.getCollection('accounts'), 'findOne')
-      .mockResolvedValueOnce(null as unknown as never)
     const promise = sut.add(accountData)
 
     await expect(promise).rejects.toBeInstanceOf(DocumentNotInsertedError)
