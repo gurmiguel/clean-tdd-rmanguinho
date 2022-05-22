@@ -1,3 +1,5 @@
+import { Collection } from 'mongodb'
+import { DocumentNotFoundError } from '../errors/document-not-found-error'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account'
 
@@ -19,6 +21,24 @@ describe('Account Mongo Repository', () => {
     const sut = new AccountMongoRepository()
     return sut
   }
+
+  test('Should throw when mongodb can\'t insert account', async () => {
+    jest.spyOn(Collection.prototype, 'findOne').mockResolvedValueOnce(null as never)
+    const sut = makeSut()
+    const accountData = {
+      name: 'any_name',
+      email: 'any_email@email.com',
+      password: 'any_password',
+    }
+
+    jest.spyOn(MongoHelper.getCollection('accounts'), 'findOne')
+      .mockResolvedValueOnce(null as unknown as never)
+    const promise = sut.add(accountData)
+
+    await expect(promise).rejects.toBeInstanceOf(DocumentNotFoundError)
+
+    jest.restoreAllMocks()
+  })
 
   test('Should return an account on success', async () => {
     const sut = makeSut()
