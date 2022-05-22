@@ -1,4 +1,6 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient, Collection, Document } from 'mongodb'
+
+type WithoutId<Document> = Omit<Document, 'id'>
 
 export abstract class MongoHelper {
   private static client: MongoClient
@@ -9,5 +11,9 @@ export abstract class MongoHelper {
 
   static async disconnect () {
     await MongoHelper.client.close()
+  }
+
+  static getCollection<DocumentModel = Document> (name: string): Collection<WithoutId<DocumentModel>> {
+    return MongoHelper.client.db().collection<WithoutId<DocumentModel>>(name)
   }
 }

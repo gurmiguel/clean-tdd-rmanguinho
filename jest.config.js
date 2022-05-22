@@ -4,6 +4,7 @@
  */
 
 module.exports = {
+  watchPathIgnorePatterns: ['globalConfig'],
   collectCoverage: false,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
