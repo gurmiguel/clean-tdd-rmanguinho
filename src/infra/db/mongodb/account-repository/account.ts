@@ -1,7 +1,7 @@
 import { AddAccountRepository } from '../../../../data/protocols/add-account-repository'
 import { AccountModel } from '../../../../domain/models/account'
 import { AddAccountModel } from '../../../../domain/usecases/add-account'
-import { DocumentNotFoundError } from '../errors/document-not-found-error'
+import { DocumentNotInsertedError } from '../errors/document-not-inserted-error'
 import { MongoHelper } from '../helpers/mongo-helper'
 
 export class AccountMongoRepository implements AddAccountRepository {
@@ -12,7 +12,7 @@ export class AccountMongoRepository implements AddAccountRepository {
     const findResult = await accountsCollection.findOne({ _id: insertedId })
 
     if (!findResult) {
-      throw new DocumentNotFoundError(accountsCollection.collectionName, { _id: insertedId })
+      throw new DocumentNotInsertedError(accountsCollection.collectionName, accountData)
     }
 
     return MongoHelper.map<AccountModel>(findResult)

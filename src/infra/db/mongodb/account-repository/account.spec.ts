@@ -1,5 +1,5 @@
 import { Collection } from 'mongodb'
-import { DocumentNotFoundError } from '../errors/document-not-found-error'
+import { DocumentNotInsertedError } from '../errors/document-not-inserted-error'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account'
 
@@ -35,7 +35,7 @@ describe('Account Mongo Repository', () => {
       .mockResolvedValueOnce(null as unknown as never)
     const promise = sut.add(accountData)
 
-    await expect(promise).rejects.toBeInstanceOf(DocumentNotFoundError)
+    await expect(promise).rejects.toBeInstanceOf(DocumentNotInsertedError)
 
     jest.restoreAllMocks()
   })
