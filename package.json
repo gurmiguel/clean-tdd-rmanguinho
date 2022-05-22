@@ -5,6 +5,7 @@
   "author": "Gustavo Miguel <gu.rmiguel@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/jest": "^27.5.0",
     "@types/node": "^17.0.31",
     "@types/validator": "^13.7.2",
@@ -37,6 +38,7 @@
     ]
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "validator": "^13.7.0"
   }
 }
