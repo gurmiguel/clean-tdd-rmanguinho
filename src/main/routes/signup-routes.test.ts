@@ -3,15 +3,15 @@ import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
 import { app } from '../config/app'
 
 describe('Signup Routes', () => {
-  beforeAll(async () => {
+  beforeAll(async() => {
     await MongoHelper.connect(process.env.MONGO_URL!)
   })
 
-  afterAll(async () => {
+  afterAll(async() => {
     await MongoHelper.disconnect()
   })
 
-  test('Should return an account on success', async () => {
+  test('Should return an account on success', async() => {
     await request(app)
       .post('/api/signup')
       .send({
