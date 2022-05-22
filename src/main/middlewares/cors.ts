@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express'
+import { RequestHandler } from 'express'
 
-export const cors = (req: Request, res: Response, next: NextFunction) => {
+export const cors: RequestHandler = (req, res, next) => {
   res.set('access-control-allow-origin', '*')
   res.set('access-control-allow-methods', '*')
   res.set('access-control-allow-headers', '*')
