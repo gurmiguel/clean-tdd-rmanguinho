@@ -15,12 +15,6 @@ export class AccountMongoRepository implements AddAccountRepository {
       throw new DocumentNotFoundError(accountsCollection.collectionName, { _id: insertedId })
     }
 
-    const { _id, ...document } = findResult
-    const account = {
-      id: _id.toHexString(),
-      ...document,
-    }
-
-    return account
+    return MongoHelper.map<AccountModel>(findResult)
   }
 }
