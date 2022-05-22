@@ -1,7 +1,8 @@
+import { makeFakeRequestFactory } from '../../../test/helpers'
 import { InvalidParamError, MissingParamError } from '../../errors'
 import { badRequest, ok, serverError } from '../../helpers/http-helper'
 import { SignUpController } from './signup'
-import { AccountModel, AddAccount, AddAccountModel, EmailValidator, HttpRequest } from './signup-protocols'
+import { AccountModel, AddAccount, AddAccountModel, EmailValidator } from './signup-protocols'
 
 const makeEmailValidator = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
@@ -48,28 +49,12 @@ const makeSut = (): SutTypes => {
   }
 }
 
-const makeFakeRequest = (data?: Record<string, any>): HttpRequest => {
-  const baseRequest = {
-    name: 'any_name',
-    email: 'any_email@mail.com',
-    password: 'any_password',
-    passwordConfirmation: 'any_password',
-  }
-
-  const request = {
-    ...baseRequest,
-    ...data,
-  }
-
-  for (const field in data) {
-    const value = data[field]
-    if (value === undefined) {
-      delete request[field]
-    }
-  }
-
-  return { body: request }
-}
+const makeFakeRequest = makeFakeRequestFactory({
+  name: 'any_name',
+  email: 'any_email@mail.com',
+  password: 'any_password',
+  passwordConfirmation: 'any_password',
+})
 
 describe('SignUp Controller', () => {
   test('Should return 400 if no name is provided', async () => {
