@@ -8,6 +8,10 @@ export const adaptRoute = (controller: Controller): RequestHandler => {
     }
     const httpResponse = await controller.handle(httpRequest)
 
-    res.status(httpResponse.statusCode).send(httpResponse.body)
+    if (httpResponse.body instanceof Error) {
+      res.status(httpResponse.statusCode).send({ error: httpResponse.body.message })
+    } else {
+      res.status(httpResponse.statusCode).send(httpResponse.body)
+    }
   }
 }
